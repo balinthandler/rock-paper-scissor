@@ -4,12 +4,13 @@
 </head>
 <body>
     <input>
-    <button>Submit</button>
+
     <script>
 
         function game() {
             let playerPoints = 0;
             let computerPoints = 0;
+            let gamesPlayed = 0;
 
 
             for(i=0; i < 5; i++){
@@ -50,10 +51,11 @@
                         }
                     else {return 'You should enter rock/paper/scissor!';}    
                 }
-
+            gamesPlayed += 1;
             console.log(playRound(playerSelection, computerSelection));
             console.log('Player score: ' + playerPoints);
             console.log('Computer score: ' + computerPoints);
+            console.log('Games played: ' + gamesPlayed);
             }    
         }
         game();
