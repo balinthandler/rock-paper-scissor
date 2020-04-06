@@ -1,0 +1,73 @@
+html{
+    font-size: 10px;
+}
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(255,255,255,0.5);
+    -webkit-animation: myfirst 2s ;
+    animation: myfirst 2s ;
+}
+@keyframes myfirst {
+    from {opacity: 0.0;}
+    to {opacity: 1;}
+  }
+h1{
+    font-size: 6rem;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.5);
+    justify-content: start;
+    align-items: center;
+
+}
+button {
+    background-color: rgb(51, 51, 51);
+    box-shadow: 0px 0px 2px 1px rgb(0, 0, 0);
+    border-color: rgb(56, 56, 56);
+    border: 1px;
+    border-radius: 2%;
+    font-size: 2rem;
+    width: 16rem;
+    height: 11rem;
+    margin: 20px;
+    padding: 5px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: rgb(255, 255, 255);
+    transition: all 0.2s ease;
+
+}
+button:hover {
+    transform: scale(1.1);
+    transition-duration: .5s;
+    box-shadow: 0px 0px 10px 1px rgb(255, 102, 0);
+    color: rgb(44, 44, 44);
+    background-color: rgb(255, 255, 255);
+
+}
+button:focus {
+    outline: none;
+
+}
+
+p {
+    font-size: 2rem;
+}
+#result {
+    font-size: 5rem;
+
+}
+

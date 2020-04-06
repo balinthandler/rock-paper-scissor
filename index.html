@@ -1,88 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Enter Rock/Paper/Scissor! Capitals doesn't matter.</h1>
-    <input>
-    <button>Submit</button>
-    <p id="result"></p>
-    <p id="player"></p>
-    <p id="computer"></p>
-    <p id="tie"></p>
-    <p id="games"></p>
+    <div id="container">
+        <h1>Rock-Paper-Scissor!</h1>
+        <p id="result"></p>
+            <div id="main">    
+                <button id="rock" value="rock">Rock</button>
+                <button id="paper" value="paper">Paper</button>
+                <button id="scissor" value="scissor">Scissor</button>
 
+                <p id="player"></p>
+                <p id="computer"></p>
+                <p id="tie"></p>
+                <p id="games"></p>
+            </div>
+    </div>
 
-    <script>
-        let playerPoints = 0;
-        let computerPoints = 0;
-        let gamesPlayed = 0;
-        let gamesTie = 0;
-        
-        let input = document.querySelector('input');
-        let textResult = document.querySelector('#result');
-        let textPlayer = document.querySelector('#player');
-        let textComputer = document.querySelector('#computer');
-        let textTie = document.querySelector('#tie');
-        let textGames = document.querySelector('#games');
-
-        document.querySelector('button').onclick = function start() {game()}
-
-        function game() {
-                let player = input.value;
-                function computerPlay() {
-                let hands = ['Rock','Paper','Scissor'];
-                let rndm = hands[Math.floor(Math.random() * (hands.length))];
-                return rndm.toLowerCase();
-                }
-
-                let computerSelection = computerPlay();
-                let playerSelection = player.toLowerCase();
-                let playerCapital = playerSelection.slice(0,1).toUpperCase() + playerSelection.slice(1).toLowerCase();
-                let computerCapital = computerSelection.slice(0,1).toUpperCase() + computerSelection.slice(1).toLowerCase();
-                
-
-                function playRound(playerSelection, computerSelection) {
-
-                    if ((playerSelection === 'rock' && computerSelection === 'scissor') || 
-                        (playerSelection === 'paper' && computerSelection === 'rock') ||
-                        (playerSelection === 'scissor' && computerSelection === 'paper'))
-                        {
-                        playerPoints++;
-                        return `You won! ${playerCapital} beats ${computerSelection}.`;
-                        }
-                    else if ((playerSelection === 'rock' && computerSelection === 'paper') ||
-                        (playerSelection === 'paper' && computerSelection === 'scissor') ||
-                        (playerSelection === 'scissor' && computerSelection === 'rock'))
-                        {
-                        computerPoints++;
-                        return `You lose! ${computerCapital} beats ${playerSelection}.`;
-                        }
-                    else if ((playerSelection === 'rock' && computerSelection === 'rock') ||
-                        (playerSelection === 'paper' && computerSelection === 'paper') ||
-                        (playerSelection === 'scissor' && computerSelection === 'scissor'))
-                        {
-                        return `It\'s a tie! ${computerCapital} equals ${playerSelection}.`;
-                        gamesTie++;
-                        }
-                    else {return 'You should enter rock/paper/scissor!';}    
-                }
-            gamesPlayed += 1;
-          /*  console.log(playRound(playerSelection, computerSelection));
-            console.log('Player score: ' + playerPoints);
-            console.log('Computer score: ' + computerPoints);
-            console.log('Games played: ' + gamesPlayed);
-            console.log(input.value);*/
-            textResult.textContent = playRound(playerSelection, computerSelection); 
-            textPlayer.textContent = 'Player score: ' + playerPoints; 
-            textComputer.textContent = 'Computer score: ' + computerPoints; 
-            textTie.textContent = 'Tied games: ' + gamesTie;
-            textGames.textContent = 'Total games played: ' + gamesPlayed;
-
-                
-        } 
-    
-    </script>
-
+    <script src="myscripts.js"></script>
 </body>
 </html>
